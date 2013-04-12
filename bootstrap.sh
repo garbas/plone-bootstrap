@@ -1,24 +1,24 @@
 ARCH=`uname -m`
-ARCH_SYS=`uname -s`
+ARCH_SYS=`uname -s | tr "[A-Z]" "[a-z]"`
 VERSION=1.5.1pre3069_8057a19
-NAME=nix-${VERSION}-${ARCH}-${ARCH_SYS,,}
+NAME=nix-${VERSION}-${ARCH}-${ARCH_SYS}
 
-if [ x$ARCH = "i686" -a x$ARCH_SYS = "FreeBSD" ]
+if [ "$ARCH" = "i686" -a "$ARCH_SYS" = "freebsd" ]
 then
     DOWNLOAD_URL=http://hydra.nixos.org/build/4256488/download/1/${NAME}.tar.bz2
-elif [ x$ARCH = "i686" -a x$ARCH_SYS = "Linux" ]
+elif [ "$ARCH" = "i686" -a "$ARCH_SYS" = "linux" ]
 then
     DOWNLOAD_URL=http://hydra.nixos.org/build/4256480/download/1/${NAME}.tar.bz2
-elif [ x$ARCH = "i686" -a x$ARCH_SYS = "Linux" ]
+elif [ "$ARCH" = "i686" -a "$ARCH_SYS" = "linux" ]
 then
     DOWNLOAD_URL=
-elif [ x$ARCH = "x86_64" -a x$ARCH_SYS = "Darwin" ]
+elif [ "$ARCH" = "x86_64" -a "$ARCH_SYS" = "darwin" ]
 then
     DOWNLOAD_URL=http://hydra.nixos.org/build/4256485/download/1/${NAME}.tar.bz2
-elif [ x$ARCH = "x86_64" -a x$ARCH_SYS = "FreeBSD" ]
+elif [ "$ARCH" = "x86_64" -a "$ARCH_SYS" = "freebsd" ]
 then
     DOWNLOAD_URL=http://hydra.nixos.org/build/4256487/download/1/${NAME}.tar.bz2
-elif [ x$ARCH = "x86_64" -a x$ARCH_SYS = "Linux" ]
+elif [ "$ARCH" = "x86_64" -a "$ARCH_SYS" = "linux" ]
 then
     DOWNLOAD_URL=http://hydra.nixos.org/build/4256479/download/1/${NAME}.tar.bz2
 else
@@ -27,8 +27,6 @@ else
     exit 1
 fi
 
-echo "SUCCESS"
-echo $DOWNLOAD_URL
 WORK_DIR=`pwd`
 curl -O $DOWNLOAD_URL
 cd /
