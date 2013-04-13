@@ -27,15 +27,19 @@ else
     exit 1
 fi
 
+echo "Platform detected: ${ARCH_SYS} ${ARCH}"
+echo "Downloading Nix for your platform..."
 WORK_DIR=`pwd`
 curl -O $DOWNLOAD_URL
-cd /
-sudo tar xfj $WORK_DIR/${NAME}.tar.bz2
+#echo "There are XXX steps to install Nix, you will be prompt for each step to confirm it"
+#echo "[1/XXX] sudo tar xfj -C / $WORK_DIR/${NAME}.tar.bz2"
+#read confirm
+sudo tar xfj -C / $WORK_DIR/${NAME}.tar.bz2
 sudo chown -R $USER /nix
 /usr/bin/nix-finish-install
 sudo rm /usr/bin/nix-finish-install
-echo "source /Users/$USER/.nix-profile/etc/profile.d/nix.sh" >> ~/.profile
-source /Users/$USER/.nix-profile/etc/profile.d/nix.sh
+echo "source $HOME/.nix-profile/etc/profile.d/nix.sh" >> ~/.profile
+source $HOME/.nix-profile/etc/profile.d/nix.sh
 cd $WORK_DIR
 nix-channel --add http://nixos.org/channels/nixpkgs-unstable
 nix-channel --update
