@@ -30,27 +30,37 @@ fi
 echo "Platform detected: ${ARCH_SYS} ${ARCH}"
 echo "Downloading Nix for your platform..."
 WORK_DIR=`pwd`
-curl -O $DOWNLOAD_URL
+#curl -O $DOWNLOAD_URL
 #echo "There are XXX steps to install Nix, you will be prompt for each step to confirm it"
-#echo "[1/XXX] sudo tar xfj -C / $WORK_DIR/${NAME}.tar.bz2"
+#echo "[1/XXX] sudo tar xfj $WORK_DIR/${NAME}.tar.bz2 -C /"
 #read confirm
-sudo tar xfj -C / $WORK_DIR/${NAME}.tar.bz2
-sudo chown -R $USER /nix
-/usr/bin/nix-finish-install
-sudo rm /usr/bin/nix-finish-install
-echo "source $HOME/.nix-profile/etc/profile.d/nix.sh" >> ~/.profile
-source $HOME/.nix-profile/etc/profile.d/nix.sh
-cd $WORK_DIR
-nix-channel --add http://nixos.org/channels/nixpkgs-unstable
-nix-channel --update
 
-## TODO: check if make is availiable
-#nix-env -iA nixpkgs.gnumake
-#echo "export LANG=\"en_US.UTF-8\"" >> ~/.profile
-#echo "export LC_COLLATE=\"en_US.UTF-8\"" >> ~/.profile
-#echo "export LC_CTYPE=\"en_US.UTF-8\"" >> ~/.profile
-#echo "export LC_MESSAGES=\"en_US.UTF-8\"" >> ~/.profile
-#echo "export LC_MONETARY=\"en_US.UTF-8\"" >> ~/.profile
-#echo "export LC_NUMERIC=\"en_US.UTF-8\"" >> ~/.profile
-#echo "export LC_TIME=\"en_US.UTF-8\"" >> ~/.profile
-#echo "export LC_ALL=\"en_US.UTF-8\"" >> ~/.profile
+#sudo tar xfj $WORK_DIR/${NAME}.tar.bz2 -C /
+#sudo chown -R $USER /nix
+#/usr/bin/nix-finish-install
+#sudo rm /usr/bin/nix-finish-install
+#source $HOME/.nix-profile/etc/profile.d/nix.sh
+#cd $WORK_DIR
+#nix-channel --add http://nixos.org/channels/nixpkgs-unstable
+#nix-channel --update
+
+if which make >/dev/null; then
+  echo "'make' command detected."
+else
+  nix-env -iA nixpkgs.gnumake
+fi
+
+echo ""
+echo ""
+echo ""
+echo "========================================================================"
+echo ""
+echo "Make sure to source Nix user profile:"
+echo "  echo \"source $HOME/.nix-profile/etc/profile.d/nix.sh\" >> ~/.profile"
+echo ""
+echo "And to run Plone you will need to setup \$LANG/\$LC_ALL:"
+echo "  echo \"export LANG=\\\"en_US.UTF-8\\\"\" >> ~/.profile"
+echo "  echo \"export LC_ALL=\\\"en_US.UTF-8\\\"\" >> ~/.profile"
+echo ""
+echo "========================================================================"
+echo "                                                      ... happy Nix-ing!"
