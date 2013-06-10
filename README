@@ -5,5 +5,8 @@ cd plone
 # if you dont have nix installed do
 sh ./install_nix.sh
 
-nix-channel --update
+# installs plone via nix
 make
+
+# use buildout as before (there is buildout.cfg for you to change)
+bin/buildout
