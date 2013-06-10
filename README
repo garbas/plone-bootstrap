@@ -1,0 +1,5 @@
+
+git clone https://gist.github.com/5293558.git plone
+cd plone
+sh ./install_nix.sh  # you do this only one
+make
