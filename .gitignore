@@ -1,0 +1,7 @@
+.installed.cfg
+bin/
+eggs/
+include/
+lib/
+nixenv
+parts/
