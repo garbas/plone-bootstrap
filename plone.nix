@@ -7,7 +7,7 @@ in
 with pkgs;
 
 buildEnv {
-  name = "plone-env";
+  name = "plone-bootstrap";
   paths = [
     python27
     python27Packages.distribute
@@ -17,6 +17,7 @@ buildEnv {
     plone43Packages.pillow
     plone43Packages.mailinglogger
     plone43Packages.plone_recipe_zope2instance
+    plone43Packages.plone_recipe_zeoserver
     plone43Packages.zc_recipe_egg
   ] ++ lib.attrValues python27.modules;
 }
