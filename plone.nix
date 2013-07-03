@@ -9,6 +9,8 @@ with pkgs;
 buildEnv {
   name = "plone-bootstrap";
   paths = [
+    haproxy
+    varnish
     python27
     python27Packages.distribute
     python27Packages.recursivePthLoader
@@ -18,6 +20,9 @@ buildEnv {
     plone43Packages.mailinglogger
     plone43Packages.plone_recipe_zope2instance
     plone43Packages.plone_recipe_zeoserver
+    plone43Packages.plone_recipe_varnish
+    plone43Packages.collective_recipe_template
+    plone43Packages.collective_recipe_filestorage
     plone43Packages.zc_recipe_egg
   ] ++ lib.attrValues python27.modules;
 }
