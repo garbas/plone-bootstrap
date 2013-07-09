@@ -1,0 +1,32 @@
+
+This will get you ready for development in no time.
+
+
+Install Nix
+===========
+
+You need to install Nix only once.
+
+Quick and dirty way would be::
+
+    sh <(curl -fsSL )
+
+
+or follow instructions `here`_:
+
+
+Bootstrap Plone development environment
+=======================================
+
+::
+
+    git clone git://github.com/garbas/plone-bootstrap.git
+    cd plone-bootstrap
+    make
+
+You have example ``buildout.cfg`` already present, now use it as you're used to
+work with ``zc.buildout``.
+
+After ``make`` run ``bin/buildout`` as usual.
+
+.. _`here`: http://hydra.nixos.org/build/5449941/download/1/manual/#idp266160 
