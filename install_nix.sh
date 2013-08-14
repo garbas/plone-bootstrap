@@ -45,6 +45,7 @@ cd $WORK_DIR
 echo "Adding and updating Nix Packages (unstable) channel."
 nix-channel --add http://nixos.org/channels/nixpkgs-unstable
 nix-channel --update
+nix-env -u \*
 
 if which make >/dev/null; then
   echo "'make' command detected."
