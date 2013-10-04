@@ -1,8 +1,8 @@
 NIX_PATH=~/.nix-defexpr/channels/
 
-all: plone.nix
+all: dev.nix
 	nix-channel --update
-	NIX_PATH=${NIX_PATH} nix-build --out-link nixenv plone.nix
+	NIX_PATH=${NIX_PATH} nix-build --out-link nixenv dev.nix
 	./nixenv/bin/virtualenv --distribute --clear .
 	echo ../../../nixenv/lib/python2.7/site-packages > lib/python2.7/site-packages/nixenv.pth
 	./bin/easy_install -H "" zc.buildout
