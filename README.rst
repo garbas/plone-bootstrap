@@ -9,7 +9,7 @@ You need to install Nix only once.
 
 Quick and dirty way would be::
 
-    sh <(curl -fsSL )
+    sh < (curl -fsSL )
 
 
 or follow instructions `here`_:
@@ -20,8 +20,8 @@ Bootstrap Plone development environment
 
 ::
 
-    git clone git://github.com/garbas/plone-bootstrap.git
-    cd plone-bootstrap
+    git clone git://github.com/garbas/plone-nix.git
+    cd plone-nix
     make
 
 You have example ``buildout.cfg`` already present, now use it as you're used to
