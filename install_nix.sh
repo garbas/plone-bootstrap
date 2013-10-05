@@ -5,22 +5,19 @@ NAME=nix-${VERSION}-${ARCH}-${ARCH_SYS}
 
 if [ "$ARCH" = "i686" -a "$ARCH_SYS" = "freebsd" ]
 then
-    DOWNLOAD_URL=http://hydra.nixos.org/build/4256488/download/1/${NAME}.tar.bz2
+    DOWNLOAD_URL=http://hydra.nixos.org/build/6039367/download/1/nix-1.6-i686-freebsd.tar.bz2
 elif [ "$ARCH" = "i686" -a "$ARCH_SYS" = "linux" ]
 then
-    DOWNLOAD_URL=http://hydra.nixos.org/build/4256480/download/1/${NAME}.tar.bz2
-elif [ "$ARCH" = "i686" -a "$ARCH_SYS" = "linux" ]
-then
-    DOWNLOAD_URL=
+    DOWNLOAD_URL=http://hydra.nixos.org/build/6039372/download/1/nix-1.6-i686-linux.tar.bz2
 elif [ "$ARCH" = "x86_64" -a "$ARCH_SYS" = "darwin" ]
 then
-    DOWNLOAD_URL=http://hydra.nixos.org/build/4256485/download/1/${NAME}.tar.bz2
+    DOWNLOAD_URL=http://hydra.nixos.org/build/6039370/download/1/nix-1.6-x86_64-darwin.tar.bz2
 elif [ "$ARCH" = "x86_64" -a "$ARCH_SYS" = "freebsd" ]
 then
-    DOWNLOAD_URL=http://hydra.nixos.org/build/4256487/download/1/${NAME}.tar.bz2
+    DOWNLOAD_URL=http://hydra.nixos.org/build/6039364/download/1/nix-1.6-x86_64-freebsd.tar.bz2
 elif [ "$ARCH" = "x86_64" -a "$ARCH_SYS" = "linux" ]
 then
-    DOWNLOAD_URL=http://hydra.nixos.org/build/4256479/download/1/${NAME}.tar.bz2
+    DOWNLOAD_URL=http://hydra.nixos.org/build/6039398/download/1/nix-1.6-x86_64-linux.tar.bz2
 else
     echo "Platform detected: ${ARCH_SYS} ${ARCH}"
     echo "Platform not supported!"
