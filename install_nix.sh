@@ -27,7 +27,7 @@ fi
 echo "Platform detected: ${ARCH_SYS} ${ARCH}"
 echo "Downloading Nix for your platform..."
 WORK_DIR=`pwd`
-if [ ! -f $WORK_DIR/${NAME}.tar.bz2]; then                                       
+if [ ! -f $WORK_DIR/${NAME}.tar.bz2 ]; then                                       
     curl -O $DOWNLOAD_URL                                                                                                                                                                                                                     
 fi
 
