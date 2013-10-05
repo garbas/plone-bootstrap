@@ -9,7 +9,7 @@ You need to install Nix only once.
 
 Quick and dirty way would be::
 
-    sh < (curl -fsSL )
+    ./install_nix.sh
 
 
 or follow instructions `here`_:
