@@ -1,6 +1,6 @@
 ARCH=`uname -m`
 ARCH_SYS=`uname -s | tr "[A-Z]" "[a-z]"`
-VERSION=1.5.1pre3069_8057a19
+VERSION=1.6
 NAME=nix-${VERSION}-${ARCH}-${ARCH_SYS}
 
 if [ "$ARCH" = "i686" -a "$ARCH_SYS" = "freebsd" ]
