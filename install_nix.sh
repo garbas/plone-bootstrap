@@ -27,7 +27,9 @@ fi
 echo "Platform detected: ${ARCH_SYS} ${ARCH}"
 echo "Downloading Nix for your platform..."
 WORK_DIR=`pwd`
-curl -O $DOWNLOAD_URL
+if [ ! -f $WORK_DIR/${NAME}.tar.bz2]; then                                       
+    curl -O $DOWNLOAD_URL                                                                                                                                                                                                                     
+fi
 
 #echo "There are XXX steps to install Nix, you will be prompt for each step to confirm it"
 #echo "[1/XXX] sudo tar xfj $WORK_DIR/${NAME}.tar.bz2 -C /"
