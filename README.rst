@@ -1,4 +1,3 @@
-
 This will get you ready for development in no time.
 
 
@@ -29,4 +28,4 @@ work with ``zc.buildout``.
 
 After ``make`` run ``bin/buildout`` as usual.
 
-.. _`here`: http://hydra.nixos.org/build/5449941/download/1/manual/#idp266160 
+.. _`here`: http://nixos.org/nix/manual/#chap-quick-start
