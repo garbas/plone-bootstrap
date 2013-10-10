@@ -6,3 +6,4 @@ lib/
 nixenv
 parts/
 var/
+buildout-cache/
